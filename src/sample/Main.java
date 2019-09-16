@@ -6,8 +6,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * @author Nicholis Wright
+ *
+ *
+ */
 public class Main extends Application {
 
+  /**
+   * The start method is the starting point of a javaFX program. This start method sets the title.
+   * @brief
+   * @param primaryStage the primary stage
+   * @throws Exception any problem w code
+   */
   @Override
   public void start(Stage primaryStage) throws Exception {
     Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
