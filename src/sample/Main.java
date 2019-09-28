@@ -6,15 +6,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * @author Nicholis Wright
- *
- *
- */
+/** @author Nicholis Wright */
 public class Main extends Application {
 
   /**
    * The start method is the starting point of a javaFX program. This start method sets the title.
+   *
    * @brief
    * @param primaryStage the primary stage
    * @throws Exception any problem w code
@@ -23,7 +20,7 @@ public class Main extends Application {
   public void start(Stage primaryStage) throws Exception {
     Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
     primaryStage.setTitle("Hello World");
-    primaryStage.setScene(new Scene(root, 300, 275));
+    primaryStage.setScene(new Scene(root, 400, 400));
     primaryStage.show();
   }
 
