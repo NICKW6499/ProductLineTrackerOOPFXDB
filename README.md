@@ -1,75 +1,38 @@
 # ProductLineTrackerOOPFXDB
 
-One paragraph of project description goes here.
-Briefly address the 5 W's.
-What is the project?
-Who made it? Did you make it independently or with a team?
-When did you make it? At what level of experience and proficiency were / are you?
-Why did you make it? For fun? For an assignment? How does it relect you as a person?
-Where did you make it? What school / class?
-Note for school project: this may be the only thing someone visiting your page reads. 
-Try to make a great impresison. Make someone want to hire you. This section will also be useful to you
-in the future to remind you about the project
+This is a production tracker program intended for use by a factory that produces media players. At the time of writing, I am a Junior in college at Florida Gulf Coast University. This program is specifically for an Object Oriented Programming assignment, and is a semester long project that will continue to receive updates as time goes on.
 
 ## Demonstration
 
-Add an animated gif of your program running. You can use ShareX, GIPHY Capture or another tool.
-https://blog.github.com/2018-06-29-GIF-that-keeps-on-GIFing/ Note for school project: This is a great way for friends 
-and family to easily see your project in action. The markdown is ![Alt text](relative/path/to/img.png)
+Animated GIF coming soon :)
 
 ## Documentation
-Create a docs folder in your project. If using Java, generate JavaDoc in your IDE. If using C++, use Doxygen. Change repository settings (using Settings at top of page) to use GitHub Pages with your docs folder. Add a link to the javadoc/doxygen index.html file with this markdown: [Text to appear](URL)
-The URL will be YourGitHubUserName.github.io/YourRepositoryName/foldername/filename
-Do not include the docs folder name in your URL.
-Sample: [JavaDoc](https://pv-cop.github.io/PV-README-TEMPLATE/javadoc/index.html)
+Java Doc coming in next push.
 
-## Diagrams
-Such as a class diagram.
-The markdown is ![Alt text](relative/path/to/img.png)
 
 ## Getting Started
-Instructions to get a copy of the project up and running on someone's local machine for development and testing purposes.
-Note for real project: You want to be able to share your project and enable collaboration.
-Note for school project: You want a potential client or hirer to be able to run your program
+To get this program started on your computer, follow the steps below:
+Download the IDE of your choice capable of creating and running a JavaFX project. This IDE must be able to use databases. Clone this repository, then open the project in your IDE. Establish the database on your computer and direct it with the file path to the res folder you initially cloned. After this the program should run.
 
 ## Built With
-IDE used
-Other software used
-Resources used
-
-Note for school project: Every section is an opportunity to make an impression. You could briefly add what you know about the IDE and describe your development skills.
-
-## Contributing
-This section is more important for real projects but is good to include in school projects.
-One of the main purposes of GitHub and similar services is to provide a means for project collaboration.
-Tell someone how they can contribute to this project.
+IntelliJ Idea Ultimate
+Scene Builder
+Discord group discussions
 
 ## Author
-name
+Nicholis Wright
 
-## License
-Public repositories on GitHub are often used to share open source software. For your repository to truly be open source, you'll need to license it so that others are free to use, change, and distribute the software. https://help.github.com/articles/licensing-a-repository/
-You have the option to choose a license when you first create your repository.
-If you need to create a license for an existing repository...
-
-Go to your repository.
-Click on "Create new file" Button.
-Type the file name as License.txt or License.md in the input box next to your repository name, a drop down button appears towards right side.
-Choose the type of license of your choice.
-Click "Commit new file" button at the bottom (Green button) Credit https://stackoverflow.com/questions/31639059/how-to-add-license-to-an-existing-github-project
-To choose a license, see https://choosealicense.com/
 
 ## Acknowledgments
-Web sites utilized
-Classmates who helped
-Your professor or TA if they helped
+Stack Overflow
+Odalys Martinez
+Kevin Mak
+Professor Scott Vanselow
 
 ## History
-Information about what has changed.
-
+9/10/2019 This project started out as a GUI with no data base attached or CSS. 
+9/28/2019 The project now has a CSS file to style the GUI and a data base attached.
 
 
 ## Key Programming Concepts Utilized
-This section would not necessarily be in a real README.
-It is a reference for you and a place to impress potential employers with your knowledge. Identify what concepts you utilize so when you need to use them again you will know that you will find them here.
-Include a brief description of the concepts in your own words to help you prepare for related interview questions.
+Key concepts I used in this project are establishing data bases with H2, creating a file path for said data base, inserting items into the data base using SQL and CSS to create a design for the GUI.
