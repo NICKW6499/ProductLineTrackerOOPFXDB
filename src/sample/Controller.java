@@ -1,54 +1,64 @@
 package sample;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import javafx.scene.control.ComboBox;
-
+/*
+ *This file is the controller and has most methods stored here.
+ * @author: Nicholis Wright
+ * */
 public class Controller {
-  final String JDBC_DRIVER = "org.h2.Driver";
-  final String DB_URL = "jdbc:h2:./res/ProductionLineDb";
-
-  public Button AddProductButton;
-  public Button RecordProductionButton;
-  public ComboBox ProductionRecords;
-
-  @FXML
-  protected void handleAddProductButtonAction(ActionEvent event) {
-    System.out.println("The Product was added");
-    productLog();
-  }
-
-  @FXML
-  protected void handleRecordProductionButtonAction(ActionEvent event) {
-    System.out.println("The button works!");
-  }
-
-  public void initialize() {
-
+  @FXML public Button recordProductionButton;
+  @FXML public Button addButton;
+  @FXML private ComboBox ComboBox;
+  /*
+  * @author: Nicholis Wright
+  *@param ActionEvent actionEvent: this param passes in the action taking place on the
+  product add button
+  * */
+  public void handleProductAddButton(ActionEvent actionEvent) {
+    System.out.println("hopefully this works");
     final String JDBC_DRIVER = "org.h2.Driver";
-    final String DB_URL = "jdbc:h2:./res/ProductionLineDb";
+    final String DB_URL = "jdbc:h2:./H2/RES";
 
-    int i;
-    for (i = 1; i < 11; i++) {
-      ProductionRecords.getItems().add(i);
-    }
-    ProductionRecords.getSelectionModel().selectFirst();
-    ProductionRecords.setEditable(true);
+    // data base credentials
+    Connection conn;
+    Statement stmt;
   }
+  /*
+  * @author: Nicholis Wright
+  *@param ActionEvent actionEvent: this param passes in the action taking place on the
+  record product button
+  * */
+  public void handleRecordProductionButton(ActionEvent actionEvent) {
+    System.out.println("hopefully this works");
+    final String JDBC_DRIVER = "org.h2.Driver";
+    final String DB_URL = "jdbc:h2:./H2/RES";
 
-  public void productLog() {
+    // data base credentials
+    Connection conn;
+    Statement stmt;
+  }
+  /*
+   * @author: Nicholis Wright
+   *This method initializes the connection to the data base and inserts items into it.
+   * */
+  public void DataInsert() {
+    final String JDBC_DRIVER = "org.h2.Driver";
+    final String DB_URL = "jdbc:h2:./H2/RES";
 
-    //  Database credentials
-    Connection conn = null;
-    Statement stmt = null;
+    // data base credentials
+    Connection conn;
+    Statement stmt;
 
     try {
       // STEP 1: Register JDBC driver
@@ -73,5 +83,15 @@ public class Controller {
     } catch (ClassNotFoundException | SQLException e) {
       e.printStackTrace();
     }
+  }
+  /*
+   * @author: Nicholis Wright
+   *This method populates the combo box with decimal numbers 1-10
+   * */
+  public void initialize() {
+    ObservableList populateNum = FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    ComboBox.setItems(populateNum);
+    ComboBox.getSelectionModel().selectFirst();
+    ComboBox.setEditable(true);
   }
 }
