@@ -15,8 +15,8 @@ To get this program started on your computer, follow the steps below:
 Download the IDE of your choice capable of creating and running a JavaFX project. This IDE must be able to use databases. Clone this repository, then open the project in your IDE. Establish the database on your computer and direct it with the file path to the res folder you initially cloned. After this the program should run.
 
 ## Built With
-IntelliJ Idea Ultimate
-Scene Builder
+IntelliJ Idea Ultimate, 
+Scene Builder, 
 Discord group discussions
 
 ## Author
@@ -24,9 +24,9 @@ Nicholis Wright
 
 
 ## Acknowledgments
-Stack Overflow
-Odalys Martinez
-Kevin Mak
+Stack Overflow, 
+Odalys Martinez, 
+Kevin Mak, 
 Professor Scott Vanselow
 
 ## History
