@@ -6,7 +6,10 @@ This is a production tracker program intended for use by a factory that produces
 ![](giphy.gif)
 
 ## Documentation
-Java Doc coming in next push.
+JavaDocs in IDE.
+
+##Diagrams
+![](capture.jpg)
 
 
 ## Getting Started
