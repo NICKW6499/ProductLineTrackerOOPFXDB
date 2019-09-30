@@ -4,17 +4,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
 /*
- *This file is the controller and has most methods stored here.
- * @author: Nicholis Wright
- * */
-
+ * This is the controller file which controls the program.
+  * @author: Nicholis Wright
+  * */
+//error says it can be package private but it cannot
 public class Controller {
 
   public Button addButton;
@@ -29,7 +27,7 @@ public class Controller {
 
   public void handleProductAddButton() {
     System.out.println("hopefully this works");
-    dataInsert();
+    test();
   }
 
   /*
@@ -40,17 +38,25 @@ public class Controller {
 
   public void handleRecordProductionButton() {
     System.out.println("hopefully this works");
-    dataInsert();
+    test();
   }
 
   /*
    * @author: Nicholis Wright
-   *This method initializes the connection to the data base and inserts items into it.
+   *This method populates the combo box with decimal numbers 1-10.
+   * @param none: no parameters
    * */
+  public void initialize() {
+    for (int i = 0; i <= 10; i++) {
+      comboBox.getItems().add(i);
+    }
+    comboBox.getSelectionModel().selectFirst();
+    comboBox.setEditable(true);
+  }
 
-  private void dataInsert() {
+  private void test() {
     final String jdbc_driver = "org.h2.Driver";
-    final String dbUrl = "jdbc:h2:./H2/RES";
+    final String dbUrl = "jdbc:h2:./res/Production";
 
     // data base credentials
     Connection conn;
@@ -80,19 +86,5 @@ public class Controller {
     } catch (ClassNotFoundException | SQLException e) {
       e.printStackTrace();
     }
-  }
-
-  /*
-   * @author: Nicholis Wright
-   *This method populates the combo box with decimal numbers 1-10.
-   * @param none: no parameters
-   * */
-
-  public void initialize() {
-    ObservableList<Integer> populateNum =
-        FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-    comboBox.setItems(populateNum);
-    comboBox.getSelectionModel().selectFirst();
-    comboBox.setEditable(true);
   }
 }
