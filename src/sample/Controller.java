@@ -10,9 +10,9 @@ import javafx.scene.control.ComboBox;
 
 /*
  * This is the controller file which controls the program.
-  * @author: Nicholis Wright
-  * */
-//error says it can be package private but it cannot
+ * @author: Nicholis Wright
+ * */
+// error says it can be package private but it cannot
 public class Controller {
 
   public Button addButton;
