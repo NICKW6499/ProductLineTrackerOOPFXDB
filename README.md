@@ -8,8 +8,8 @@ This is a production tracker program intended for use by a factory that produces
 ## Documentation
 JavaDocs in IDE.
 
-##Diagrams
-![](capture.jpg)
+## Diagrams
+![](Capture.jpg)
 
 
 ## Getting Started
