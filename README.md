@@ -34,6 +34,7 @@ Professor Scott Vanselow
 ## History
 9/10/2019 This project started out as a GUI with no data base attached or CSS. 
 9/28/2019 The project now has a CSS file to style the GUI and a data base attached.
+11/9/2019 The project now has integreated table views and database functionality to record progress.
 
 
 ## Key Programming Concepts Utilized
