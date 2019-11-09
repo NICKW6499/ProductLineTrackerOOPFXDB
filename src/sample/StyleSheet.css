@@ -5,16 +5,36 @@
   * */
 
 .root {
-  -fx-background-color: linear-gradient(blue, white);
-  -fx-font-size: 11pt;
+  -fx-background-image: url("appBackground.jpg");
+  -fx-font-family: "Agency FB";
+  -fx-font-size: 15pt;
+  -tab-text-color: black;
 }
 
 .button {
-  -fx-background-color: linear-gradient(green, white);
+  -fx-background-color: linear-gradient(#BBD2C5, #536976);
   -fx-background-radius: 100;
+  -fx-border-radius: 100;
+  -fx-text-fill: black;
+  -fx-border-color: black;
 }
+
+
+.tab {
+  -fx-background-color: linear-gradient(#BBD2C5, #536976);
+  -fx-background-radius: 100;
+  -fx-border-radius: 100;
+  -fx-border-color: black;
+  -fx-text-fill: black;
+  -fx-focus-color: transparent;
+}
+
 
 .text-area {
   -fx-background-color: antiquewhite;
   -fx-background-radius: 0;
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+  -fx-background-color: linear-gradient(#BBD2C5, #536976);
 }
