@@ -49,7 +49,7 @@ public class Main extends Application {
     // 2
     AudioPlayer newProduct =
         new AudioPlayer(
-            "DP-X1A", "Onkyo", "DSD/FLAC/ALAC/WAV/AIFF/MQA/Ogg-Vorbis/MP3/AAC", "M3U/PLS/WPL");
+            "M3U/PLS/WPL");
     System.out.println(newProduct);
     newProduct.play();
     newProduct.stop();
@@ -63,10 +63,10 @@ public class Main extends Application {
     // 3b
     AudioPlayer newAudioProduct =
         new AudioPlayer(
-            "DP-X1A", "Onkyo", "DSD/FLAC/ALAC/WAV/AIFF/MQA/Ogg-Vorbis/MP3/AAC", "M3U/PLS/WPL");
+            "M3U/PLS/WPL");
     Screen newScreen = new Screen("720x480", 40, 22);
     MoviePlayer newMovieProduct =
-        new MoviePlayer("DBPOWER MK101", "OracleProduction", newScreen, MonitorType.LCD);
+        new MoviePlayer(newScreen);
     ArrayList<MultimediaControl> productList = new ArrayList<>();
     productList.add(newAudioProduct);
     productList.add(newMovieProduct);

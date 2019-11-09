@@ -47,8 +47,8 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * @author: Nicholis Wright
    * */
   AudioPlayer() {
-    setSupportedAudioFormats("unknown");
-    setSupportedPlaylistFormats("unknown");
+    setSupportedAudioFormats();
+    setSupportedPlaylistFormats();
   }
 
   /*
@@ -60,12 +60,9 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * @param String supportedPlaylistFormat: supported playlist formats
    * */
   AudioPlayer(
-      String name,
-      String manufacturer,
-      String supportedAudioFormat,
       @SuppressWarnings("SameParameterValue") String supportedPlaylistFormat) {
-    super(name, manufacturer, ItemType.AUDIO);
-    AudioPlayer.supportedAudioFormats = supportedAudioFormat;
+    super("DP-X1A", "Onkyo", ItemType.AUDIO);
+    AudioPlayer.supportedAudioFormats = "DSD/FLAC/ALAC/WAV/AIFF/MQA/Ogg-Vorbis/MP3/AAC";
     AudioPlayer.supportedPlaylistFormats = supportedPlaylistFormat;
   }
 
@@ -82,8 +79,8 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * @author: Nicholis Wright
    * @param String supportedAudioFormat: passes in the format.
    * */
-  private void setSupportedAudioFormats(String supportedAudioFormat) {
-    AudioPlayer.supportedAudioFormats = supportedAudioFormat;
+  private void setSupportedAudioFormats() {
+    AudioPlayer.supportedAudioFormats = "unknown";
   }
 
   /*
@@ -99,8 +96,8 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * @author: Nicholis Wright
    * @param
    * */
-  private void setSupportedPlaylistFormats(String supportedPlaylistFormat) {
-    AudioPlayer.supportedPlaylistFormats = supportedPlaylistFormat;
+  private void setSupportedPlaylistFormats() {
+    AudioPlayer.supportedPlaylistFormats = "unknown";
   }
 
   /*

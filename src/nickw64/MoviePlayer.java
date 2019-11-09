@@ -21,10 +21,10 @@ public class MoviePlayer extends Product implements MultimediaControl {
    * @param Screen screen: screen object
    * @param MonitorType monitorType: type of monitor
    * */
-  MoviePlayer(String name, String manufacturer, Screen screen, MonitorType monitorType) {
-    super(name, manufacturer, ItemType.VISUAL);
+  MoviePlayer(Screen screen) {
+    super("DBPOWER MK101", "OracleProduction", ItemType.VISUAL);
     setScreen(screen);
-    setMonitorType(monitorType);
+    setMonitorType(MonitorType.LCD);
   }
 
   /*
