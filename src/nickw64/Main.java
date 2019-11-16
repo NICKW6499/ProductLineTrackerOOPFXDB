@@ -47,9 +47,7 @@ public class Main extends Application {
     System.out.println(product2.toString());
 
     // 2
-    AudioPlayer newProduct =
-        new AudioPlayer(
-            "M3U/PLS/WPL");
+    AudioPlayer newProduct = new AudioPlayer("M3U/PLS/WPL");
     System.out.println(newProduct);
     newProduct.play();
     newProduct.stop();
@@ -61,12 +59,9 @@ public class Main extends Application {
     System.out.println(s1);
 
     // 3b
-    AudioPlayer newAudioProduct =
-        new AudioPlayer(
-            "M3U/PLS/WPL");
+    AudioPlayer newAudioProduct = new AudioPlayer("M3U/PLS/WPL");
     Screen newScreen = new Screen("720x480", 40, 22);
-    MoviePlayer newMovieProduct =
-        new MoviePlayer(newScreen);
+    MoviePlayer newMovieProduct = new MoviePlayer(newScreen);
     ArrayList<MultimediaControl> productList = new ArrayList<>();
     productList.add(newAudioProduct);
     productList.add(newMovieProduct);

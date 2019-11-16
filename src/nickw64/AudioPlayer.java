@@ -59,8 +59,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * @param String supportedAudioFormat: supported audio formats
    * @param String supportedPlaylistFormat: supported playlist formats
    * */
-  AudioPlayer(
-      @SuppressWarnings("SameParameterValue") String supportedPlaylistFormat) {
+  AudioPlayer(@SuppressWarnings("SameParameterValue") String supportedPlaylistFormat) {
     super("DP-X1A", "Onkyo", ItemType.AUDIO);
     AudioPlayer.supportedAudioFormats = "DSD/FLAC/ALAC/WAV/AIFF/MQA/Ogg-Vorbis/MP3/AAC";
     AudioPlayer.supportedPlaylistFormats = supportedPlaylistFormat;
