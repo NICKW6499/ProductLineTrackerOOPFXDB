@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -26,12 +27,13 @@ public class Controller extends ProductionRecord {
 
   @FXML public Button addButton;
   @FXML public Button recordProductionButton;
-  @FXML private ComboBox<Integer> comboBox;
+  @FXML private ComboBox<Integer> quantityCombo;
   @FXML private ChoiceBox choiceBox;
   @FXML private TextField txtName;
   @FXML private TextField txtMan;
   @FXML private TextArea ProductionLog;
   @FXML private ObservableList<Product> productLine;
+  @FXML private ListView<Product> produceView;
   @FXML private TableView<Product> productView;
   @FXML private TableColumn<?, ?> colProdName;
   @FXML private TableColumn<?, ?> colManName;
@@ -53,6 +55,13 @@ public class Controller extends ProductionRecord {
   public void handleProductAddButton() {
     System.out.println("hopefully this works");
     setupProductLineTable();
+    String prodName = txtName.getText();
+    String prodMan = txtMan.getText();
+    ItemType prodType = (ItemType) choiceBox.getValue();
+    Product newProduct = new Product(prodName, prodMan, prodType);
+    ProductionRecord newProds = new ProductionRecord(newProduct, 1);
+
+    ProductionLog.appendText(super.toString() + "\n");
     insertDB();
   }
 
@@ -63,8 +72,17 @@ public class Controller extends ProductionRecord {
   * */
 
   public void handleRecordProductionButton() {
-    System.out.println("hopefully this works");
-    insertDB();
+    int prodCount =  Integer.parseInt(String.valueOf(quantityCombo.getValue()));
+    Product newItem = produceView.getSelectionModel().getSelectedItem();
+
+    for (int num = 1; num <= prodCount; num++){
+      ProductionRecord newProds = new ProductionRecord(newItem, prodCount);
+
+      newProds.setProductID(getProductID()+1);
+      ProductionLog.appendText(newProds.toString() + "\n" + "\n");
+
+      insertDB(newProds);
+    }
   }
 
   /*
@@ -73,12 +91,18 @@ public class Controller extends ProductionRecord {
    * @param
    * */
   private void setupProductLineTable() {
+
     String prodName = txtName.getText();
     String prodMan = txtMan.getText();
     ItemType prodType = (ItemType) choiceBox.getValue();
 
+    //Product mediaProduct = new Product(prodName,prodMan,prodType);
+
+    produceView.getItems().add(new Product(prodName,prodMan,prodType));
+
     productLine.add(new Product(prodName, prodMan, prodType));
     productView.setItems(productLine);
+
   }
 
   /*
@@ -94,10 +118,10 @@ public class Controller extends ProductionRecord {
     colProdType.setCellValueFactory(new PropertyValueFactory("Type"));
 
     for (int i = 0; i <= 10; i++) {
-      comboBox.getItems().add(i);
+      quantityCombo.getItems().add(i);
     }
-    comboBox.getSelectionModel().selectFirst();
-    comboBox.setEditable(true);
+    quantityCombo.getSelectionModel().selectFirst();
+    quantityCombo.setEditable(true);
     for (ItemType it : ItemType.values()) {
       choiceBox.getItems().add(it);
     }
@@ -107,7 +131,7 @@ public class Controller extends ProductionRecord {
    * @author: Nicholis Wright
    * @param:none
    * */
-  private void insertDB() {
+  public void insertDB(Product newItem) {
     final String jdbc_driver = "org.h2.Driver";
     final String dbUrl = "jdbc:h2:./res/Production";
 
@@ -151,6 +175,51 @@ public class Controller extends ProductionRecord {
     } catch (ClassNotFoundException | SQLException e) {
       e.printStackTrace();
     }
-    ProductionLog.appendText(super.toString() + "\n");
+  }
+
+  public void insertDB() {
+    final String jdbc_driver = "org.h2.Driver";
+    final String dbUrl = "jdbc:h2:./res/Production";
+
+    // data base credentials
+    Connection conn;
+    Statement stmt;
+
+    try {
+      // STEP 1: Register JDBC driver
+      Class.forName(jdbc_driver);
+
+      // STEP 2: Open a connection
+      conn = DriverManager.getConnection(dbUrl);
+
+      // STEP 3: Execute a query
+      stmt = conn.createStatement();
+
+      String prodName = txtName.getText();
+      String prodMan = txtMan.getText();
+      ItemType prodType = (ItemType) choiceBox.getValue();
+      Widget newProduct = new Widget(prodName, prodMan, prodType);
+
+      // this inserts the name, manufacturer, and type into product of the database
+      String sql =
+          "INSERT INTO PRODUCT(NAME,MANUFACTURER, TYPE) "
+              + "VALUES (  '"
+              + newProduct.getName()
+              + "' ,   '"
+              + newProduct.getManufacturer()
+              + "' , '"
+              + prodType
+              + "')";
+      System.out.println("sql is " + sql);
+      stmt.executeUpdate(sql);
+
+      // STEP 4: Clean-up environment
+      stmt.close();
+      conn.close();
+
+      // catches/handles exception errors
+    } catch (ClassNotFoundException | SQLException e) {
+      e.printStackTrace();
+    }
   }
 }

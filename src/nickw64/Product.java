@@ -4,10 +4,10 @@ package nickw64;
  * @author: Nicholis Wright
  * */
 public class Product implements Item {
-  private int Id;
-  public ItemType Type;
-  private String Manufacturer;
-  private String Name;
+  private int id;
+  public ItemType type;
+  private String manufacturer;
+  private String name;
 
   /*
    * Default constructor for Product
@@ -32,6 +32,7 @@ public class Product implements Item {
     setName(name);
     setManufacturer(manufacturer);
     setType(type);
+    setId(1);
   }
 
   /*
@@ -57,7 +58,7 @@ public class Product implements Item {
    * @return Id: id of product
    * */
   public int getId() {
-    return Id;
+    return id;
   }
 
   /*
@@ -66,7 +67,7 @@ public class Product implements Item {
    * @param int Id: id code of product
    * */
   public void setId(int id) {
-    this.Id = id;
+    this.id = id;
   }
 
   /*
@@ -75,7 +76,7 @@ public class Product implements Item {
    * @return Manufacturer: return manufacturer name
    * */
   public String getManufacturer() {
-    return Manufacturer;
+    return manufacturer;
   }
 
   /*
@@ -84,7 +85,7 @@ public class Product implements Item {
    * @param String manufacturer: name of manufacturer passed in.
    * */
   public void setManufacturer(String manufacturer) {
-    Manufacturer = manufacturer;
+    this.manufacturer = manufacturer;
   }
 
   /*
@@ -93,7 +94,7 @@ public class Product implements Item {
    * @return Name: returns product name
    * */
   public String getName() {
-    return Name;
+    return name;
   }
 
   /*
@@ -102,7 +103,7 @@ public class Product implements Item {
    * @param String name: passed in name of product to set.
    * */
   public void setName(String name) {
-    Name = name;
+    this.name = name;
   }
 
   /*
@@ -111,7 +112,7 @@ public class Product implements Item {
    * @param ItemType type: assigns the passed info to the new type.
    * */
   public void setType(ItemType type) {
-    Type = type;
+    this.type = type;
   }
 
   /*
@@ -120,7 +121,7 @@ public class Product implements Item {
    * @return Type: returns type of product
    * */
   public ItemType getType() {
-    return Type;
+    return type;
   }
 }
 

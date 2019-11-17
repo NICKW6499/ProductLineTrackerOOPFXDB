@@ -20,8 +20,8 @@ public class ProductionRecord extends Product {
    * @param -none
    * */
   ProductionRecord() {
-    this.productionNumber = 1;
-    this.productID = 1;
+    this.productionNumber = 0;
+    this.productID = 0;
     this.serialNumber = "1";
     setProdDate(new Date());
   }
@@ -43,16 +43,18 @@ public class ProductionRecord extends Product {
    * @param int count: control the "count" of a specific type of product
    * */
   public ProductionRecord(Product product, int count) {
+    for (int i = 0; i < count; i++) {
+      setProdDate(new Date());
+      this.productionNumber = getProductionNum() + i;
+      setProductID(product.getId()+ i);
 
-    setProdDate(new Date());
+      String idNumber = String.format("%05d", productID);
 
-    this.productID = product.getId();
+      this.serialNumber =
+          product.getManufacturer().substring(0, 3) + product.getType().getCodes() + idNumber;
+      }
+    }
 
-    String idNumber = String.format("%05d", count);
-
-    this.serialNumber =
-        product.getManufacturer().substring(0, 3) + product.getType().getCodes() + idNumber;
-  }
 
   /*
    * Constructor for 4 parameters
